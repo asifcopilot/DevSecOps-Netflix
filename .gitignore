@@ -26,3 +26,36 @@ npm-debug.log*
 yarn.lock
 yarn-debug.log*
 yarn-error.log*
+
+
+#git ignore for terraform 
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform/
+
+# git ignore for terraform
+
+# Local .terraform directories
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+.terraform*
+
+# Crash log files
+crash.log
+
+# Exclude all .tfvars files, which are likely to contain sensitive data, such as passwords, private keys, and other secrets.
+*.tfvars
+
+# Ignore override files as they are usually used to override resources locally and should not be shared
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include .terraformrc and terraform.rc files as they are configuration files for Terraform CLI
+.terraformrc
+terraform.rc
