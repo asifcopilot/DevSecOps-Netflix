@@ -112,7 +112,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.main.id]
   size                  = var.vm_size
-  admin_username        = "admin"
+  admin_username        = var.prefix
   admin_password        = var.admin-password
   computer_name         = var.prefix
   boot_diagnostics {
@@ -137,7 +137,7 @@ resource "azurerm_linux_virtual_machine" "main" {
 
 connection {
     type        = "ssh"
-    user        = "admin"
+    user        = var.prefix
     password    = var.admin-password
     host        = self.public_ip_address
   }
